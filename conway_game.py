@@ -22,4 +22,5 @@ next_cells.append(column) # adding column value to the main list
 
 
 # The logic of what should happen
-
+while True: # the program starts
+    
