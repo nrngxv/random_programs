@@ -32,8 +32,8 @@ while True: # the program starts
         print()
 
     # calculating the next cell, based on the current one
-    for x in range(HEIGHT):
-        for y in range(WIDTH):
+    for x in range(WIDTH):
+        for y in range(HEIGHT):
 
             #% WIDTH/HEIGHT ensure, the coords are between 0 and WIDTH/HEIGHT-1
             leftcoord = (x - 1) % WIDTH
@@ -47,9 +47,34 @@ while True: # the program starts
                 living_neighbour += 1 # adds a living cell to topleft, if the above condition is true
 
             if current_cells[x][topcoord] == "#":
+                living_neighbour += 1 # living cell on the top coord
+
+            if current_cells[x][rightcoord] == "#":
+                living_neighbour += 1 # living cell on the right coord
+
+            if current_cells[rightcoord][y] == "#":
                 living_neighbour += 1
 
+            if current_cells[leftcoord][bottomcoord] == "#":
+                living_neighbour += 1
 
+            if current_cells[leftcoord][y] == "#":
+                living_neighbour += 1
 
-            
+            if current_cells[x][bottomcoord] == "#":
+                living_neighbour += 1
 
+            if current_cells[rightcoord][bottomcoord] == "#":
+                living_neighbour += 1
+
+            # setting rules, based on conway game of life
+            if current_cells[x][y] == "#" and (living_neighbour == 2 or living_neighbour == 3): # living cells stays alive
+                next_cells[x][y] = "#"
+
+            elif next_cells[x][y] == " " and living_neighbour == 3: # the next cell becomes alive
+                next_cells[x][y] = "#"
+
+            else:
+                next_cells[x][y] = " " # everything else becomes dead
+
+    time.sleep(1)
