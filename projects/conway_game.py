@@ -11,15 +11,13 @@ next_cells = []
 
 for x in range(WIDTH):
     column = []
+    for y in range(HEIGHT):
+        if random.randint(0,1) == 0:
+            column.append("#")
+        else:
+            column.append(" ")
 
-for y in range(HEIGHT):
-    if random.randint(0,1) == 0:
-        column.append("#")
-    else:
-        column.append(" ")
-
-next_cells.append(column) # adding column value to the main list
-
+    next_cells.append(column) # adding column value to the main list
 
 # The logic of what should happen
 while True: # the program starts
@@ -29,6 +27,7 @@ while True: # the program starts
     for y in range(HEIGHT):
         for x in range(WIDTH):
            print(current_cells[x][y], end="")
+
         print()
 
     # calculating the next cell, based on the current one
@@ -49,16 +48,16 @@ while True: # the program starts
             if current_cells[x][topcoord] == "#":
                 living_neighbour += 1 # living cell on the top coord
 
-            if current_cells[x][rightcoord] == "#":
+            if current_cells[rightcoord][topcoord] == "#":
                 living_neighbour += 1 # living cell on the right coord
+
+            if current_cells[leftcoord][y] == "#":
+                living_neighbour += 1
 
             if current_cells[rightcoord][y] == "#":
                 living_neighbour += 1
 
             if current_cells[leftcoord][bottomcoord] == "#":
-                living_neighbour += 1
-
-            if current_cells[leftcoord][y] == "#":
                 living_neighbour += 1
 
             if current_cells[x][bottomcoord] == "#":
