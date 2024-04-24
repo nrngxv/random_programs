@@ -1,3 +1,3 @@
-# This is a place to add random projects that I do.
+# Adding random programs that I write
 
-There projects are sometimes different from one another, sometimes very similar. They are more of a way for me, to practice what I have learned.
+Sometimes I will put notes where from what I have learned
