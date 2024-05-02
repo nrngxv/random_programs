@@ -3,9 +3,6 @@ import random
 ht_list = [] # List that stores head and tails count
 streak = 0
 
- 
-
-
 for i in range(10000):
     # this generates heads and tails value and stores it
     if random.randint(0,1) == 1:
