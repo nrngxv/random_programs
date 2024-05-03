@@ -17,9 +17,8 @@ for i in range(10000):
     next_step = 7
     addone = ht_list[step]
     addtwo = ht_list[step:next_step]
-    # operand error +: "int" + "str" 
-    ht_list_add = addone + addtwo #adds ht_list[0] with ht_list[0:7]
     
+'''
     if ht_list_add == 6:
         streak = streak + 1
     else:
@@ -28,6 +27,6 @@ for i in range(10000):
         else: # increases values in ht_list[]
             step = step + 1
             next_step = next_step + 1   
-
+'''
 print(ht_list) # Prints heads and tails list
 print(streak)
