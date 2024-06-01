@@ -1,3 +1,2 @@
-# Adding random programs that I write
-
-Sometimes I will put notes where from what I have learned
+# About
+Projects from - Automate the boring stuff with python and from other places.
